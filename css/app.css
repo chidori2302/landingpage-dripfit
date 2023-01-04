@@ -231,7 +231,7 @@ a {
   text-align: center; }
   .slider-content-img {
     position: relative; }
-    .slider-content-img .mySlides {
+    .slider-content-img .mySlides1 {
       width: 100%; }
     .slider-content-img .left {
       position: absolute;
@@ -433,7 +433,7 @@ a {
     text-align: center; }
     .content8-slide-img {
       position: relative; }
-      .content8-slide-img .mySlides {
+      .content8-slide-img .mySlides2 {
         width: 100%; }
       .content8-slide-img .left-2 {
         position: absolute;
