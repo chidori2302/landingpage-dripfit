@@ -387,7 +387,8 @@ a {
 .content4 {
   background-color: #F2F2F2;
   text-align: center;
-  padding: 23px auto; }
+  padding-top: 38px;
+  padding-bottom: 23px; }
   .content4 .title {
     margin-bottom: 23px; }
   .content4 iframe {
