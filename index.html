@@ -5,9 +5,17 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dripfit</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="./css/app.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+    <script src="http://code.jquery.com/jquery-1.12.0.min.js"></script>
+    <!-- <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script> -->
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
 </head>
 <body>
+    
     <div class="header">
         <div class="header-social">
             <a href="#">
@@ -50,22 +58,40 @@
     </div>
     <div class="seation">
         <img src="./img/seation.png" alt="">
-        <div class="seation-form" action="#" method="POST">
+        <div class="seation-form">
             <div class="seation-form-title">
                 <h2>giải pháp</h2>
                 <h3>dành cho người từng giảm cân thất bại</h3>
                 <h4>Đạt chuẩn <span>y khoa tối giản</span> từ Hoa Kỳ</h4>
             </div>
-            <div class="seation-form-input">
+            <form class="seation-form-input" novalidate="" id="test-form" method="POST"
+                    action="https://script.google.com/macros/s/AKfycbz5aWi4U8etqyOf0pAkmOxw5XF6dXoPM-zjaG93osa8SUts5wvGJK46Rjz0DH1niEPG/exec">
+                <div class="form-group">
 
-                <label for="">Họ và tên</label>
-                <input type="text" name="name" placeholder="Nhập họ và tên">
-                <label for="">Số điện thoại</label>
-                <input type="number" name="phone" placeholder="Nhập số đt">
-                <label for="">Cân nặng</label>
-                <input type="number" name="weight" placeholder="Nhập cân nặng">
-                <button type="submit">Đăng kí tư vấn 1-1</button>
-            </div>
+                    <label for="">Họ và tên</label>
+                    <input type="text" name="name" placeholder="Nhập họ và tên" id="name" required class="form-control item">
+                    
+                    <div class="invalid-feedback">Bạn cần nhập thông tin vào đây</div>
+                </div>
+                <div class="form-group">
+
+                    
+                    <label for="">Số điện thoại</label>
+                    <input type="number" name="phone" placeholder="Nhập số đt"  id="phone" required class="form-control item">
+                    
+                    <div class="invalid-feedback">Bạn cần nhập thông tin vào đây</div>
+                </div>
+                
+                <div class="form-group">
+
+                    <label for="">Cân nặng</label>
+                    <input type="number" name="weight" placeholder="Nhập cân nặng" id="weight" required class="form-control item">
+                    
+                    <div class="invalid-feedback">Bạn cần nhập thông tin vào đây</div>
+                </div>
+                <button type="submit" id="submit-form">Đăng kí tư vấn 1-1</button>
+            </form>
+            
         </div>
     </div>
     <div class="slider">
@@ -197,7 +223,6 @@
             <div class="content7-title-right">
                 <p>Là giải pháp quản trị cân nặng được tin tưởng bởi các nhân vật có tầm ảnh hưởng quốc tế</p>
             </div>
-            </div>
         </div>
         <div class="content7-img">
             <img src="./img/char/Mask group.png" alt="">
@@ -254,6 +279,59 @@
         <div>Chuỗi phòng khám đa khoa quốc tế DRIP HYDRATION</div>
         <div>(* Xin lưu ý : kết quả phụ thuộc vào cơ địa của mỗi người )</div>
     </footer>
+    <script src="./validator.js"></script>
+    <script type="text/javascript">
+        $(document).ready(()=>
+            { 
+            var submit = $("button[type='submit']")
+            submit.click(()=>{
+                            var data = $('form#test-form').serialize();
+                            // console.log($('form#test-form'))
+                            var form = $("#test-form")
+
+                            if (form[0].checkValidity() === false) {
+                                event.preventDefault()
+                                event.stopPropagation()
+                            }
+                            
+                            form.addClass('was-validated');
+
+                            let check = true
+                            const value = $(`form input`)
+                            if (value[0].value == ``) {
+                                check = false
+                            }
+                            if (value[1].value == ``) {
+                                check = false
+                            } 
+                            if (value[2].value == ``) {
+                                check = false
+                            } 
+                            if (check) {
+                                
+                                $.ajax({
+                                                type : 'POST', 
+                                                url : 'https://script.google.com/macros/s/AKfycbz5aWi4U8etqyOf0pAkmOxw5XF6dXoPM-zjaG93osa8SUts5wvGJK46Rjz0DH1niEPG/exec',
+                                                dataType:'json',
+                                                crossDomain : true,
+                                                data : data,
+                                                success : function(data)
+                                                {
+        
+                                                    
+                                                    if(data == 'false') 
+                                                    {
+                                                        alert('Thêm không thành công, bạn cũng có thể sử dụng để hiển thị Popup hoặc điều hướng');
+                                                    }else{
+                                                        alert('Đã thêm dữ liệu vào Form');
+                                                    }
+                                                }
+                                    })
+                            }
+                            return false
+            })
+        })
+    </script>
     <script src="./script.js"></script>
 </body>
 </html>
