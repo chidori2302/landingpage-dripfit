@@ -82,6 +82,12 @@
   font-style: italic;
   font-display: swap; }
 
+@keyframes turnleft {
+  from {
+    right: -100%; }
+  to {
+    right: 0%; } }
+
 body {
   font-family: 'SFU Futura';
   margin: 0; }
@@ -321,7 +327,8 @@ a {
     .indicators span:hover {
       background-color: #5E3A95; }
   .indicators .active {
-    background-color: #5E3A95; }
+    background-color: #5E3A95;
+    animation: turnleft 1s; }
 
 .line {
   background-color: #A351A3;
@@ -494,16 +501,18 @@ a {
   justify-content: center;
   flex-wrap: wrap; }
   .content8 .title {
-    width: 412px; }
+    width: 386px; }
     .content8 .title h2 {
-      font-size: 51px; }
+      font-size: 51px;
+      margin-bottom: -30px; }
     .content8 .title span {
       font-size: 78px; }
     .content8 .title h4 {
       font-weight: 400;
       font-size: 35px;
-      letter-spacing: 138%;
-      text-align: justify; }
+      text-align: justify;
+      margin-top: 0;
+      margin-bottom: 54px; }
   .content8 button {
     cursor: pointer;
     font-family: 'SFU Futura';

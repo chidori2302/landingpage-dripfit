@@ -48,6 +48,10 @@ $(document).ready(()=>
                                                         alert('Thêm không thành công, bạn cũng có thể sử dụng để hiển thị Popup hoặc điều hướng');
                                                     }else{
                                                         alert('Đã thêm dữ liệu vào Form');
+                                                        for (let i = 0; i < value.length; i++) {
+                                                            value[i].value=``;
+                                                            
+                                                        }
                                                     }
                                                 }
                                     })

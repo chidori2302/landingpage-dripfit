@@ -31,6 +31,8 @@ $(document).ready(()=>
                                 value[2].placeholder = `Vui lòng nhập thông tin`
                                 value[2].classList.add(`red`)
                             } 
+                            
+
                             if (check) {
                                 
                                 $.ajax({
@@ -48,6 +50,10 @@ $(document).ready(()=>
                                                         alert('Thêm không thành công, bạn cũng có thể sử dụng để hiển thị Popup hoặc điều hướng');
                                                     }else{
                                                         alert('Đã thêm dữ liệu vào Form');
+                                                        for (let i = 0; i < value.length; i++) {
+                                                            value[i].value=``;
+                                                            
+                                                        }
                                                     }
                                                 }
                                     })
