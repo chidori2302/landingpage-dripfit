@@ -28,5 +28,7 @@ function showSlides(n, no) {
   dots[slideIndex[no]-1].className += " active";
 }
 
-
+function removeValidate(e) {
+    e.classList.remove(`red`)
+}
 
