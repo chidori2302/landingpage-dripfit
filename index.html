@@ -65,11 +65,12 @@
                 <h4>Đạt chuẩn <span>y khoa tối giản</span> từ Hoa Kỳ</h4>
             </div>
             <form class="seation-form-input" novalidate="" id="test-form" method="POST"
-                    action="https://script.google.com/macros/s/AKfycbz5aWi4U8etqyOf0pAkmOxw5XF6dXoPM-zjaG93osa8SUts5wvGJK46Rjz0DH1niEPG/exec">
+                    action="https://script.google.com/macros/s/AKfycbyGK5PUXG6kzTo5r0W5AT5qbUJnOqqfHGxEJuaYJJc4dVCtIhSZjAp6ONjvxrrMDtne/exec">
                 <div class="form-group">
 
+                    <!-- <input type="date" name="createDate"class="d-none"> -->
                     <label for="">Họ và tên</label>
-                    <input type="text" name="name" placeholder="Nhập họ và tên" id="name" required class="form-control item">
+                    <input type="text" name="fullname" placeholder="Nhập họ và tên" id="name" required class="form-control item">
                     
                     <div class="invalid-feedback">Bạn cần nhập thông tin vào đây</div>
                 </div>
@@ -77,7 +78,7 @@
 
                     
                     <label for="">Số điện thoại</label>
-                    <input type="number" name="phone" placeholder="Nhập số đt"  id="phone" required class="form-control item">
+                    <input type="number" name="telephone" placeholder="Nhập số đt"  id="phone" required class="form-control item">
                     
                     <div class="invalid-feedback">Bạn cần nhập thông tin vào đây</div>
                 </div>
@@ -89,7 +90,7 @@
                     
                     <div class="invalid-feedback">Bạn cần nhập thông tin vào đây</div>
                 </div>
-                <button type="submit" id="submit-form">Đăng kí tư vấn 1-1</button>
+                <button type="submit" id="submit-form1">Đăng kí tư vấn 1-1</button>
             </form>
             
         </div>
@@ -283,10 +284,12 @@
     <script type="text/javascript">
         $(document).ready(()=>
             { 
-            var submit = $("button[type='submit']")
+            var submit = $("#submit-form1")
             submit.click(()=>{
                             var data = $('form#test-form').serialize();
-                            // console.log($('form#test-form'))
+                            var date = new Date().toLocaleString();
+                            data = data + `&` +`createDate=`+date
+                            console.log(data)
                             var form = $("#test-form")
 
                             if (form[0].checkValidity() === false) {
@@ -311,7 +314,7 @@
                                 
                                 $.ajax({
                                                 type : 'POST', 
-                                                url : 'https://script.google.com/macros/s/AKfycbz5aWi4U8etqyOf0pAkmOxw5XF6dXoPM-zjaG93osa8SUts5wvGJK46Rjz0DH1niEPG/exec',
+                                                url : 'https://script.google.com/macros/s/AKfycbyGK5PUXG6kzTo5r0W5AT5qbUJnOqqfHGxEJuaYJJc4dVCtIhSZjAp6ONjvxrrMDtne/exec',
                                                 dataType:'json',
                                                 crossDomain : true,
                                                 data : data,
