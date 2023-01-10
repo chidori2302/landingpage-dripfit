@@ -1,11 +1,11 @@
 $(document).ready(()=>
             { 
-            var submit = $("#submit-form1")
+            var submit = $("#submit-form2")
             submit.click(()=>{
-                            var data = $('form#test-form1').serialize();
-
+                            var data = $('form#test-form2').serialize();
+                            
                             console.log(data)
-                            var form = $("#test-form1")
+                            var form = $("#test-form2")
 
                             if (form[0].checkValidity() === false) {
                                 event.preventDefault()
@@ -13,7 +13,7 @@ $(document).ready(()=>
                             }
 
                             let check = true
-                            const value = $(`#test-form1 input`)
+                            const value = $(`#test-form2 input`)
                             console.log(value);
                             if (value[0].value == ``) {
                                 check = false

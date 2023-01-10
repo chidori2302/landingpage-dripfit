@@ -239,7 +239,8 @@ a{
         height: 100%;
     }
     &-contact{
-        position: absolute;
+        position: fixed;
+        z-index: 99;
         top: 40%;
         right: 3%;
         img{
@@ -713,8 +714,8 @@ a{
         top: 75%;
         right: 3%;
         img{
-            width: 90px;
-            height: 90px;
+            width: 80px;
+            height: 80px;
         }
         #myBtn {
             display: none; /* Hidden by default */
@@ -731,6 +732,7 @@ a{
         }
     }
     &-form{
+        
         &-title{
             text-transform: uppercase;
             font-weight: 700;
@@ -782,11 +784,9 @@ a{
         position: absolute;
         display: inline-block;
         right: 14.2%;
-        // width: 22%;
-        height: 36%;
-        flex-direction: column;
-        align-items: flex-start;
-        transform: translateY(50%);
+        // height: 0%;
+        top: 45%;
+        transform: translateY(-50%);
         label{
             color: white;
             font-weight: 400;
@@ -807,29 +807,25 @@ a{
             appearance: none;
             margin: 0; 
         }
-        input{
+        .input2{
             font-weight: 400;
-            font-size: 15px;
-            margin-top: 4.1px;
-            border: none;
-            background-color: $mainbg-color;
-            width: 360px;
-            height: 15%;
-            padding: 10px 16px;
-            box-sizing: border-box;
-            &:focus{
-                outline: none;
-            }
-            @include mobile {
-                font-size: 10px;
-                width: 140px;
-
-            }
-            @include tablet() {
-                font-size: 10px;
-                width: 300px;
-
-            }
+                font-size: 15px;
+                margin-top: 4.1px;
+                // border: white;
+                // background-color: $mainbg-color;
+                width: 100%;
+                height: 15%;
+                padding: 10px 16px;
+                box-sizing: border-box;
+                &:focus{
+                    outline: none;
+                }
+                @include mobile {
+                    font-size: 10px;
+                }
+                @include tablet() {
+                    font-size: 10px;
+                }
         }
         button{
             cursor: pointer;
