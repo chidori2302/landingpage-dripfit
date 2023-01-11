@@ -155,8 +155,9 @@ a{
 }
 .title{
     text-transform: uppercase;
-    font-weight: 700;
+    
     h2{
+        font-weight: 700 !important;
         margin-top: 0px;
         margin-bottom: 0px;
         font-size: 40px;
@@ -164,6 +165,7 @@ a{
         margin-bottom: -8px;
     } 
     span{
+        font-weight: 700 !important;
         margin-top: 0px;
         margin-bottom: 0px;
         font-size: 56px;

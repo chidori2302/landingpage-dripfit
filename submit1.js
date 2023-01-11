@@ -37,7 +37,7 @@ $(document).ready(()=>
                                 
                                 $.ajax({
                                                 type : 'POST', 
-                                                url : 'https://script.google.com/macros/s/AKfycbyGK5PUXG6kzTo5r0W5AT5qbUJnOqqfHGxEJuaYJJc4dVCtIhSZjAp6ONjvxrrMDtne/exec',
+                                                url : 'https://script.google.com/macros/s/AKfycbwY5oCg8hyfhcl1KejJfYcvPZrgJ7ciH7t6VVZX9VvZ9WKQLk2eBJVF5Bfx8hh6_n0Pyg/exec',
                                                 dataType:'json',
                                                 crossDomain : true,
                                                 data : data,
