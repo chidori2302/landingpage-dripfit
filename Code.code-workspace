@@ -1,0 +1,15 @@
+{
+  "folders": [
+	{
+		"name": "Code",
+		"path": "../.."
+	},
+	{
+		"path": "../../../../../../xampp/htdocs"
+	}
+],
+  "settings": {
+    "git.ignoreLimitWarning": true,
+    "liveServer.settings.multiRootWorkspaceName": "Code"
+  }
+}

@@ -82,11 +82,12 @@
   font-style: italic;
   font-display: swap; }
 
-@keyframes turnleft {
-  from {
-    right: -100%; }
-  to {
-    right: 0%; } }
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  margin: 0; }
 
 body {
   font-family: 'SFU Futura';
@@ -96,13 +97,18 @@ body {
   color: white;
   border: 2px solid red; }
 
-.form-message {
-  font-size: 13;
-  font-style: italic;
-  color: red; }
-
 a {
   text-decoration: none; }
+
+.direction {
+  z-index: 100;
+  top: 40%;
+  right: 3%; }
+  .direction .mb-10 {
+    margin-bottom: 90%; }
+  .direction img {
+    width: 48px;
+    height: 48px; }
 
 .title {
   text-transform: uppercase; }
@@ -110,69 +116,86 @@ a {
     font-weight: 700 !important;
     margin-top: 0px;
     margin-bottom: 0px;
-    font-size: 40px;
-    color: #000000;
-    margin-bottom: -8px; }
+    font-size: 19px;
+    color: #000000; }
+    @media (min-width: 600px) {
+      .title h2 {
+        font-size: 40px; } }
   .title span {
     font-weight: 700 !important;
     margin-top: 0px;
     margin-bottom: 0px;
-    font-size: 56px;
+    font-size: 27px;
     color: #5E3A95; }
+    @media (min-width: 600px) {
+      .title span {
+        font-size: 56px; } }
 
 .header {
   box-sizing: border-box;
   width: 100%;
-  padding: 22px 0px;
-  display: flex;
-  gap: 10%;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center; }
+  padding: 22px 0px; }
   .header-social {
-    width: 204px;
     height: 40.83px;
+    width: 424px; }
+    .header-social img {
+      box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25); }
+  .header-contact a {
+    text-decoration: none; }
+  .header-contact-call {
+    padding: 16px;
+    box-sizing: border-box;
+    width: 204px;
+    height: 46px;
+    background-color: #5E3A95;
+    border-radius: 23px;
     display: flex;
-    gap: 14.46px;
-    width: 438px; }
-  .header-contact {
-    display: flex;
-    gap: 30px;
-    width: 438px; }
-    .header-contact a {
-      text-decoration: none; }
-    .header-contact-call {
-      padding: 16px;
-      box-sizing: border-box;
-      width: 204px;
-      height: 46px;
-      background-color: #5E3A95;
-      border-radius: 23px;
-      display: flex;
-      gap: 10px;
-      font-style: normal;
-      font-weight: 700;
-      font-size: 18px;
-      justify-content: center;
-      align-items: center;
-      color: white; }
+    gap: 10px;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 18px;
+    justify-content: center;
+    align-items: center;
+    color: white; }
 
 .menu {
   background-color: #5E3A95;
-  display: flex;
-  gap: 45px;
-  justify-content: center;
-  text-align: center;
-  margin-bottom: 4px; }
-  .menu a {
-    padding: 20px;
-    color: white;
+  z-index: 100;
+  position: relative; }
+  .menu li {
     text-transform: uppercase; }
-    .menu a:hover {
+    .menu li:hover {
       background-color: #3b245e; }
+  .menu a {
+    text-decoration: none;
+    color: white; }
+    @media only screen and (max-width: 992px) {
+      .menu a {
+        color: black; } }
+  .menu .navbar-collapse {
+    margin: 0 !important; }
+    @media only screen and (max-width: 992px) {
+      .menu .navbar-collapse {
+        background-color: #FFFFFF; } }
 
 .seation {
   position: relative; }
+  .seation button {
+    cursor: pointer;
+    font-family: 'SFU Futura';
+    font-weight: 700;
+    font-size: 20px;
+    display: block;
+    padding: 0.5rem 1rem;
+    background-color: bisque;
+    border: none;
+    border-radius: 30px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    background: linear-gradient(97.32deg, #AB7927 -62%, #B48739 -59.66%, #CBA964 -53.21%, #DEC688 -46.69%, #ECDCA3 -40.16%, #F7EBB7 -33.6%, #FDF5C3 -27%, #FFF8C7 -20.28%, #FEF6C2 -6.7%, #FDF1B4 9.2%, #FAE89D 26.2%, #F6DC7C 43.89%, #F5D76F 50%, #F0D16B 52.72%, #C9A04D 76.4%, #B1823A 94.44%, #A87733 104.61%, #A27230 124.92%, #936426 150.67%, #8D5F22 157.81%, #AE7B33 176.89%, #D69D48 202.1%, #C28D41 209.2%, #6F4C25 239.64%, #4E321A 253.5%, #4F331A 254.07%, #7C5320 282.44%, #8D5F22 296.79%, #D69D48 321.82%);
+    margin-bottom: 5%; }
+    @media (max-width: 500px) {
+      .seation button {
+        font-size: 10.2px; } }
   .seation img {
     width: 100%;
     height: 100%; }
@@ -189,33 +212,26 @@ a {
   .seation-form {
     filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
     position: absolute;
-    display: inline-block;
     right: 10%;
-    height: 36%;
-    transform: translateY(50%);
-    flex-direction: column;
-    align-items: flex-start; }
+    top: 50%;
+    transform: translateY(-50%); }
     .seation-form-title {
-      font-weight: 700;
       text-align: center;
       color: white;
       margin-bottom: 20px; }
       .seation-form-title h2 {
+        font-weight: 700;
         margin: 0;
         text-transform: uppercase;
         font-size: 40px; }
-        @media only screen and (max-width: 1524px) {
-          .seation-form-title h2 {
-            font-size: 30px; } }
       .seation-form-title h3 {
+        font-weight: 700;
         margin-top: 0;
         margin-bottom: 20px;
         text-transform: uppercase;
         font-size: 20px; }
-        @media only screen and (max-width: 1524px) {
-          .seation-form-title h3 {
-            font-size: 15px; } }
       .seation-form-title h4 {
+        font-weight: 700;
         color: #000000;
         margin: 10px auto;
         font-size: 15.2343px;
@@ -223,16 +239,11 @@ a {
         display: inline;
         padding: 8px 24.2px;
         clip-path: polygon(0% 0%, 100% 0%, 97% 50%, 100% 100%, 0% 100%, 3% 50%); }
-        @media only screen and (max-width: 1524px) {
-          .seation-form-title h4 {
-            font-size: 10px; } }
       .seation-form-title span {
+        font-weight: 700;
         color: black;
         text-transform: uppercase;
         font-size: 20px; }
-        @media only screen and (max-width: 1524px) {
-          .seation-form-title span {
-            font-size: 15px; } }
     .seation-form-input {
       width: 360px;
       margin: 0 auto; }
@@ -242,12 +253,6 @@ a {
         font-size: 13.3333px;
         margin-bottom: 4.1px;
         display: block; }
-        @media only screen and (max-width: 600px) {
-          .seation-form-input label {
-            font-size: 10px; } }
-        @media only screen and (max-width: 1524px) {
-          .seation-form-input label {
-            font-size: 10px; } }
       .seation-form-input input[type=number]::-webkit-inner-spin-button,
       .seation-form-input input[type=number]::-webkit-outer-spin-button {
         -webkit-appearance: none;
@@ -264,12 +269,6 @@ a {
         box-sizing: border-box; }
         .seation-form-input .input1:focus {
           outline: none; }
-        @media only screen and (max-width: 600px) {
-          .seation-form-input .input1 {
-            font-size: 10px; } }
-        @media only screen and (max-width: 1524px) {
-          .seation-form-input .input1 {
-            font-size: 10px; } }
       .seation-form-input button {
         cursor: pointer;
         font-family: 'SFU Futura';
@@ -283,53 +282,43 @@ a {
         border: none;
         border-radius: 30px;
         background: linear-gradient(97.32deg, #AB7927 -62%, #B48739 -59.66%, #CBA964 -53.21%, #DEC688 -46.69%, #ECDCA3 -40.16%, #F7EBB7 -33.6%, #FDF5C3 -27%, #FFF8C7 -20.28%, #FEF6C2 -6.7%, #FDF1B4 9.2%, #FAE89D 26.2%, #F6DC7C 43.89%, #F5D76F 50%, #F0D16B 52.72%, #C9A04D 76.4%, #B1823A 94.44%, #A87733 104.61%, #A27230 124.92%, #936426 150.67%, #8D5F22 157.81%, #AE7B33 176.89%, #D69D48 202.1%, #C28D41 209.2%, #6F4C25 239.64%, #4E321A 253.5%, #4F331A 254.07%, #7C5320 282.44%, #8D5F22 296.79%, #D69D48 321.82%); }
-        @media only screen and (max-width: 600px) {
-          .seation-form-input button {
-            font-size: 10px; } }
-        @media only screen and (max-width: 1524px) {
-          .seation-form-input button {
-            font-size: 10px; } }
+      @media (max-width: 1336px) {
+        .seation-form-input {
+          width: 300px; } }
+    @media (max-width: 1336px) {
+      .seation-form h2 {
+        font-size: 30px; }
+      .seation-form h3 {
+        font-size: 13px; }
+      .seation-form h4 {
+        font-size: 10px; }
+      .seation-form span {
+        font-size: 13px; }
+      .seation-form label {
+        font-size: 10px; }
+      .seation-form button {
+        font-size: 13px; } }
 
 .slider .title {
   text-align: center;
   margin: 40px auto; }
 
-.slider-content {
-  text-align: center; }
-  .slider-content-img {
-    position: relative; }
-    .slider-content-img .mySlides1 {
-      width: 100%; }
-    .slider-content-img .left {
-      position: absolute;
-      left: 11%;
-      top: 45%;
-      transform: translateX(-50%);
-      cursor: pointer; }
-    .slider-content-img .right {
-      position: absolute;
-      right: 11%;
-      top: 45%;
-      transform: translateX(-50%);
-      cursor: pointer; }
-
-.indicators {
+.slider-indicator {
   margin-top: 20px;
-  margin-bottom: 20px;
-  gap: 20px; }
-  .indicators span {
-    display: inline-block;
+  margin-bottom: 20px; }
+  .slider-indicator button {
+    position: static !important;
     margin-left: 20px;
-    width: 15px;
-    height: 15px;
-    border: 2px solid #A351A3;
+    width: 15px !important;
+    height: 15px !important;
+    border: 2px solid #A351A3 !important;
     border-radius: 50%;
-    cursor: pointer; }
-    .indicators span:hover {
+    cursor: pointer;
+    background-color: white; }
+    .slider-indicator button:hover {
       background-color: #5E3A95; }
-  .indicators .active {
-    background-color: #5E3A95;
-    animation: turnleft 1s; }
+  .slider-indicator .active {
+    background-color: #5E3A95; }
 
 .line {
   background-color: #A351A3;
@@ -342,47 +331,91 @@ a {
   width: 100%;
   background-color: #F2F2F2;
   display: flex;
-  gap: 115px;
   flex-wrap: wrap;
   justify-content: center;
   align-items: center; }
   .content1 .content1-text {
-    width: 518px; }
+    width: 600px; }
     .content1 .content1-text h3 {
       width: 90%;
       font-size: 15.2343px;
       text-transform: uppercase;
       font-weight: 700;
       margin-bottom: 1px; }
-    .content1 .content1-text .title span {
-      margin-top: -30px;
-      font-size: 71px;
-      display: block;
-      text-align: right; }
+    .content1 .content1-text .title {
+      width: 518px; }
+      .content1 .content1-text .title span {
+        display: block;
+        text-align: right; }
+      @media (max-width: 600px) {
+        .content1 .content1-text .title {
+          width: 100%; } }
+    @media (max-width: 600px) {
+      .content1 .content1-text {
+        width: 100%; }
+        .content1 .content1-text h3 {
+          font-size: 9px; } }
     .content1 .content1-text p {
       font-weight: 400;
       font-size: 15px;
       text-align: justify; }
   .content1 .content1-img {
-    height: 615px; }
+    width: 50%; }
+    @media (max-width: 1200px) {
+      .content1 .content1-img {
+        width: 100%; } }
     .content1 .content1-img img {
-      height: 100%; }
+      width: 100%; }
 
 .content2 {
+  background-color: #FFFFFF;
   width: 100%; }
   .content2 img {
     width: 100%; }
-
-.inline {
-  display: inline; }
+  .content2-background {
+    background-image: url("/HamoGroup/DripFit/img/Bgcontent2.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover; }
+  .content2 .slider .mySlides-content2 {
+    position: absolute;
+    color: black;
+    z-index: 100; }
+  .content2 .slider .carousel-inner img {
+    margin: 0 auto; }
+  .content2 .slider .carousel-inner button img {
+    width: 15px;
+    height: 23px; }
+  .content2 .slider .carousel-content2 {
+    padding-left: 23px;
+    padding-right: 23px; }
+    .content2 .slider .carousel-content2 p {
+      margin-bottom: 0;
+      font-size: 13px; }
+  .content2 .slider .title h2 {
+    font-size: 23px; }
+  .content2 .slider .title span {
+    font-size: 30px; }
 
 .content3 {
   text-align: center; }
+  .content3 .title {
+    margin: 0 auto;
+    max-width: 892px; }
+    @media (max-width: 768px) {
+      .content3 .title {
+        background-color: #5E3A95;
+        width: 100%;
+        text-align: left;
+        padding: 27px; }
+        .content3 .title h2 {
+          color: white;
+          font-size: 15px; }
+        .content3 .title span {
+          font-size: 20px;
+          color: #FFF8C7; } }
   .content3-img1 {
-    position: relative;
-    margin-top: 48px; }
-    .content3-img1 img {
-      width: 100%; }
+    position: relative; }
     .content3-img1 button {
       position: absolute;
       cursor: pointer;
@@ -398,17 +431,40 @@ a {
       border-radius: 30px;
       box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
       background: linear-gradient(97.32deg, #AB7927 -62%, #B48739 -59.66%, #CBA964 -53.21%, #DEC688 -46.69%, #ECDCA3 -40.16%, #F7EBB7 -33.6%, #FDF5C3 -27%, #FFF8C7 -20.28%, #FEF6C2 -6.7%, #FDF1B4 9.2%, #FAE89D 26.2%, #F6DC7C 43.89%, #F5D76F 50%, #F0D16B 52.72%, #C9A04D 76.4%, #B1823A 94.44%, #A87733 104.61%, #A27230 124.92%, #936426 150.67%, #8D5F22 157.81%, #AE7B33 176.89%, #D69D48 202.1%, #C28D41 209.2%, #6F4C25 239.64%, #4E321A 253.5%, #4F331A 254.07%, #7C5320 282.44%, #8D5F22 296.79%, #D69D48 321.82%); }
-      @media only screen and (max-width: 600px) {
+      @media (max-width: 1600px) {
+        .content3-img1 button {
+          font-size: 13px; } }
+      @media (max-width: 1336px) {
+        .content3-img1 button {
+          font-size: 10px; } }
+      @media (max-width: 1024px) {
+        .content3-img1 button {
+          font-size: 8px; } }
+      @media (max-width: 835px) {
         .content3-img1 button {
           font-size: 5px; } }
-      @media only screen and (max-width: 1524px) {
-        .content3-img1 button {
-          font-size: 9px; } }
-      @media only screen and (max-width: 1724px) {
-        .content3-img1 button {
-          font-size: 11px; } }
+    .content3-img1 .img1 {
+      margin-top: 48px; }
+  .content3-img12 button {
+    padding: 1rem 3rem;
+    cursor: pointer;
+    font-family: 'SFU Futura';
+    font-weight: 700;
+    font-size: 20px;
+    border: none;
+    border-radius: 30px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    background: linear-gradient(97.32deg, #AB7927 -62%, #B48739 -59.66%, #CBA964 -53.21%, #DEC688 -46.69%, #ECDCA3 -40.16%, #F7EBB7 -33.6%, #FDF5C3 -27%, #FFF8C7 -20.28%, #FEF6C2 -6.7%, #FDF1B4 9.2%, #FAE89D 26.2%, #F6DC7C 43.89%, #F5D76F 50%, #F0D16B 52.72%, #C9A04D 76.4%, #B1823A 94.44%, #A87733 104.61%, #A27230 124.92%, #936426 150.67%, #8D5F22 157.81%, #AE7B33 176.89%, #D69D48 202.1%, #C28D41 209.2%, #6F4C25 239.64%, #4E321A 253.5%, #4F331A 254.07%, #7C5320 282.44%, #8D5F22 296.79%, #D69D48 321.82%); }
+    @media (max-width: 650px) {
+      .content3-img12 button {
+        font-size: 15px;
+        padding: 1rem 2rem; } }
+    @media (max-width: 500px) {
+      .content3-img12 button {
+        font-size: 8.74px;
+        padding: 5px 1rem; } }
   .content3-img2 {
-    margin-top: -40px;
+    margin-top: -20px;
     width: 70%; }
 
 .content4 {
@@ -418,103 +474,140 @@ a {
   padding-bottom: 23px; }
   .content4 .title {
     margin-bottom: 23px; }
+    @media (max-width: 992px) {
+      .content4 .title {
+        font-size: 19px; } }
   .content4 iframe {
     width: 906px;
-    height: 530px;
-    margin-bottom: 61px; }
-  .content4 img {
-    width: 100%; }
+    height: 530px; }
+    @media (max-width: 992px) {
+      .content4 iframe {
+        width: 90%;
+        height: 186px; } }
 
 .content5 {
   background-color: #FFFFFF;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 43px;
-  padding: 61px 0px; }
-  .content5img img {
-    width: 737px;
-    height: 690px; }
+  padding: 30px; }
   .content5 .title span {
-    letter-spacing: 0.705rem;
-    font-size: 70px; }
+    letter-spacing: 0.705rem; }
   .content5 .title h3 {
     font-weight: 700;
     font-size: 30px;
     margin: 0;
     color: #5E3A95;
     margin-bottom: -20px; }
+  @media (max-width: 600px) {
+    .content5 .title h3 {
+      font-size: 19px;
+      margin-bottom: -10px; }
+    .content5 .title span {
+      letter-spacing: 20%;
+      font-size: 35.1357px; } }
   .content5-text {
-    width: 516px; }
+    max-width: 516px; }
     .content5-text-check {
       font-weight: 400;
       font-size: 16px;
       display: flex;
       gap: 18px;
       align-items: center; }
+    @media (max-width: 768px) {
+      .content5-text {
+        font-size: 13px; }
+        .content5-text img {
+          width: 37.55px;
+          height: 36.3px; } }
 
 .content6 {
-  text-align: center;
   background-color: #F2F2F2;
-  padding: 14px;
+  padding-left: 30px;
+  padding-right: 30px;
   margin: 0; }
   .content6 .title {
-    margin: 26px; }
+    text-align: center; }
+  .content6 .slider .carousel-inner button {
+    width: 15px;
+    height: 23px; }
+  .content6 .slider .carousel-inner .title h2 {
+    font-size: 30px; }
+  .content6 .slider .carousel-inner .title p {
+    height: 72px;
+    text-transform: none;
+    text-align: justify; }
+  .content6 .slider .carousel-inner .title span {
+    font-size: 16px;
+    background-color: #A351A3;
+    color: white; }
+  .content6 .slider .carousel-inner .slider-indicator {
+    bottom: 220px; }
   .content6 img {
+    margin: 0 auto;
     width: 65%; }
 
 .content7-title {
-  margin: 0;
   text-transform: uppercase;
   color: #FFFFFF;
-  background-color: #5E3A95;
-  padding: 35px;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8%;
-  justify-content: center;
-  align-items: center; }
+  background-color: #5E3A95; }
   .content7-title-left h2 {
-    margin-bottom: -20px; }
+    font-size: 12.8956px;
+    font-weight: 700 !important;
+    margin-top: 0px;
+    margin-bottom: 0px; }
   .content7-title-left span {
-    font-weight: 700;
-    font-size: 70px;
-    letter-spacing: 0.705rem;
-    margin: 0; }
+    font-size: 30.0897px;
+    font-weight: 700 !important;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    letter-spacing: 0.2em; }
   .content7-title-right {
-    margin-bottom: -10px; }
-    .content7-title-right p {
-      margin-bottom: 0;
-      width: 711px;
-      font-weight: 400;
-      font-size: 25px; }
+    max-width: 737px; }
 
-.content7-img {
-  display: flex;
-  gap: 0px;
-  justify-content: center;
-  margin: 60px;
-  flex-wrap: wrap; }
+.content7-img img {
+  width: 304.65px;
+  height: 321.05px; }
+  @media (max-width: 768px) {
+    .content7-img img {
+      width: 157.82px;
+      height: 166.31px; } }
 
 .content8 {
-  display: flex;
-  gap: 125px;
-  justify-content: center;
-  flex-wrap: wrap; }
-  .content8 .title {
-    width: 386px; }
-    .content8 .title h2 {
+  margin: 0 auto;
+  max-width: 1192px; }
+  .content8-title1 {
+    max-width: 386px; }
+    .content8-title1 h2 {
       font-size: 51px;
       margin-bottom: -30px; }
-    .content8 .title span {
+    .content8-title1 span {
       font-size: 78px; }
-    .content8 .title h4 {
+    .content8-title1 h4 {
       font-weight: 400;
       font-size: 35px;
       text-align: justify;
       margin-top: 0;
       margin-bottom: 54px; }
-  .content8 button {
+  @media (max-width: 768px) {
+    .content8-title2 {
+      text-align: center; }
+      .content8-title2 h2 {
+        font-size: 39px;
+        margin-bottom: 0px; }
+      .content8-title2 span {
+        font-size: 45px;
+        letter-spacing: 0.5em;
+        margin-bottom: 10px; }
+      .content8-title2 h4 {
+        font-size: 30px;
+        margin-top: 10px; } }
+  @media (max-width: 470px) {
+    .content8-title2 h2 {
+      font-size: 19px; }
+    .content8-title2 span {
+      font-size: 20px;
+      letter-spacing: 0.5em; }
+    .content8-title2 h4 {
+      font-size: 13.982px; } }
+  .content8 .title button {
     cursor: pointer;
     font-family: 'SFU Futura';
     font-weight: 700;
@@ -527,84 +620,31 @@ a {
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     background: linear-gradient(97.32deg, #AB7927 -62%, #B48739 -59.66%, #CBA964 -53.21%, #DEC688 -46.69%, #ECDCA3 -40.16%, #F7EBB7 -33.6%, #FDF5C3 -27%, #FFF8C7 -20.28%, #FEF6C2 -6.7%, #FDF1B4 9.2%, #FAE89D 26.2%, #F6DC7C 43.89%, #F5D76F 50%, #F0D16B 52.72%, #C9A04D 76.4%, #B1823A 94.44%, #A87733 104.61%, #A27230 124.92%, #936426 150.67%, #8D5F22 157.81%, #AE7B33 176.89%, #D69D48 202.1%, #C28D41 209.2%, #6F4C25 239.64%, #4E321A 253.5%, #4F331A 254.07%, #7C5320 282.44%, #8D5F22 296.79%, #D69D48 321.82%); }
   .content8-slide {
-    text-align: center; }
-    .content8-slide-img {
-      position: relative; }
-      .content8-slide-img .mySlides2 {
-        width: 100%; }
-      .content8-slide-img .left-2 {
-        position: absolute;
-        left: 32px;
-        top: 45%;
-        transform: translateX(-50%);
-        cursor: pointer; }
-      .content8-slide-img .right-2 {
-        position: absolute;
-        right: 0px;
-        top: 45%;
-        transform: translateX(-50%);
-        cursor: pointer; }
+    width: 100%;
+    max-width: 672px; }
 
 .content9 {
   position: relative;
   margin-bottom: -4px; }
-  .content9 img {
-    width: 100%; }
-  .content9-pageup {
-    position: absolute;
-    top: 75%;
-    right: 3%; }
-    .content9-pageup img {
-      width: 80px;
-      height: 80px; }
-    .content9-pageup #myBtn {
-      display: none;
-      /* Hidden by default */
-      position: fixed;
-      /* Fixed/sticky position */
-      bottom: 20px;
-      /* Place the button at the bottom of the page */
-      right: 30px;
-      z-index: 99;
-      /* Make sure it does not overlap */
-      border: none;
-      /* Remove borders */
-      outline: none;
-      /* Remove outline */
-      cursor: pointer; }
-      .content9-pageup #myBtn:hover {
-        opacity: 80%; }
   .content9-form {
     position: absolute;
-    display: inline-block;
     right: 14.2%;
-    top: 45%;
+    top: 50%;
     transform: translateY(-50%); }
     .content9-form-title {
       text-transform: uppercase;
-      font-weight: 700;
       color: #FEF2B6; }
       .content9-form-title h2 {
+        font-weight: 700;
         margin-top: 0px;
         margin-bottom: 0px;
         font-size: 25.8676px;
         margin-bottom: -8px; }
-        @media only screen and (max-width: 600px) {
-          .content9-form-title h2 {
-            font-size: 13px; } }
-        @media only screen and (max-width: 1524px) {
-          .content9-form-title h2 {
-            font-size: 13px; } }
       .content9-form-title span {
+        font-weight: 700;
         margin-top: 0px;
         margin-bottom: 0px;
         font-size: 33.9417px; }
-        @media only screen and (max-width: 600px) {
-          .content9-form-title span {
-            font-size: 20px; } }
-        @media only screen and (max-width: 1524px) {
-          .content9-form-title span {
-            font-size: 20px; } }
     .content9-form ul {
       font-weight: 700;
       font-size: 15.7087px;
@@ -614,28 +654,12 @@ a {
       color: #D498E9;
       margin-top: 9.3px;
       margin-bottom: 27px; }
-      @media only screen and (max-width: 600px) {
-        .content9-form ul {
-          font-size: 8px;
-          margin-bottom: 10px;
-          padding-left: 10px; } }
-      @media only screen and (max-width: 1524px) {
-        .content9-form ul {
-          font-size: 8px;
-          margin-bottom: 10px;
-          padding-left: 10px; } }
     .content9-form label {
       color: white;
       font-weight: 400;
       font-size: 13.3333px;
       margin-bottom: 4.1px;
       display: block; }
-      @media only screen and (max-width: 600px) {
-        .content9-form label {
-          font-size: 10px; } }
-      @media only screen and (max-width: 1524px) {
-        .content9-form label {
-          font-size: 10px; } }
     .content9-form input[type=number]::-webkit-inner-spin-button,
     .content9-form input[type=number]::-webkit-outer-spin-button {
       -webkit-appearance: none;
@@ -652,12 +676,6 @@ a {
       box-sizing: border-box; }
       .content9-form .input2:focus {
         outline: none; }
-      @media only screen and (max-width: 600px) {
-        .content9-form .input2 {
-          font-size: 10px; } }
-      @media only screen and (max-width: 1524px) {
-        .content9-form .input2 {
-          font-size: 10px; } }
     .content9-form button {
       cursor: pointer;
       font-family: 'SFU Futura';
@@ -671,24 +689,34 @@ a {
       border: none;
       border-radius: 30px;
       background: linear-gradient(97.32deg, #AB7927 -62%, #B48739 -59.66%, #CBA964 -53.21%, #DEC688 -46.69%, #ECDCA3 -40.16%, #F7EBB7 -33.6%, #FDF5C3 -27%, #FFF8C7 -20.28%, #FEF6C2 -6.7%, #FDF1B4 9.2%, #FAE89D 26.2%, #F6DC7C 43.89%, #F5D76F 50%, #F0D16B 52.72%, #C9A04D 76.4%, #B1823A 94.44%, #A87733 104.61%, #A27230 124.92%, #936426 150.67%, #8D5F22 157.81%, #AE7B33 176.89%, #D69D48 202.1%, #C28D41 209.2%, #6F4C25 239.64%, #4E321A 253.5%, #4F331A 254.07%, #7C5320 282.44%, #8D5F22 296.79%, #D69D48 321.82%); }
-      @media only screen and (max-width: 600px) {
-        .content9-form button {
-          font-size: 10px; } }
-      @media only screen and (max-width: 1524px) {
-        .content9-form button {
-          font-size: 10px; } }
     .content9-form p {
       font-weight: 400;
       font-size: 14.359px;
       text-align: center;
       margin-top: -15px;
       color: #B5B5C3; }
-      @media only screen and (max-width: 600px) {
-        .content9-form p {
-          font-size: 8px; } }
-      @media only screen and (max-width: 1524px) {
-        .content9-form p {
-          font-size: 8px; } }
+    @media lg {
+      .content9-form h2 {
+        font-size: 16px; }
+      .content9-form span {
+        font-size: 16px; }
+      .content9-form ul {
+        font-size: 16px; }
+      .content9-form input {
+        font-size: 16px; }
+      .content9-form button {
+        font-size: 16px; } }
+    @media lg {
+      .content9-form h2 {
+        font-size: 16px; }
+      .content9-form span {
+        font-size: 16px; }
+      .content9-form ul {
+        font-size: 16px; }
+      .content9-form input {
+        font-size: 16px; }
+      .content9-form button {
+        font-size: 16px; } }
 
 footer {
   display: flex;
@@ -702,6 +730,9 @@ footer {
   footer div {
     font-weight: 700;
     font-size: 14.359px; }
+    @media (max-width: 500px) {
+      footer div {
+        font-size: 10px; } }
 
 .invalid-feedback {
   color: yellow; }
