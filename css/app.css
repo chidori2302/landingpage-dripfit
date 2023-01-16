@@ -102,10 +102,8 @@ a {
 
 .direction {
   z-index: 100;
-  top: 40%;
+  top: 70%;
   right: 3%; }
-  .direction .mb-10 {
-    margin-bottom: 90%; }
   .direction img {
     width: 48px;
     height: 48px; }
@@ -171,12 +169,21 @@ a {
     color: white; }
     @media only screen and (max-width: 992px) {
       .menu a {
+        padding: 0 !important;
+        margin: 16px 30px !important;
+        font-size: 16px;
         color: black; } }
   .menu .navbar-collapse {
     margin: 0 !important; }
     @media only screen and (max-width: 992px) {
       .menu .navbar-collapse {
         background-color: #FFFFFF; } }
+  .menu .input-group input {
+    background-color: rgba(255, 255, 255, 0.5) !important; }
+  .menu .input-group span {
+    background-color: rgba(255, 255, 255, 0.5) !important; }
+  .menu .input-group i {
+    color: white !important; }
 
 .seation {
   position: relative; }
@@ -333,7 +340,8 @@ a {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  align-items: center; }
+  align-items: center;
+  flex-grow: 2; }
   .content1 .content1-text {
     width: 600px; }
     .content1 .content1-text h3 {
@@ -364,6 +372,9 @@ a {
     @media (max-width: 1200px) {
       .content1 .content1-img {
         width: 100%; } }
+    @media (min-width: 1200px) {
+      .content1 .content1-img {
+        width: 615px; } }
     .content1 .content1-img img {
       width: 100%; }
 
@@ -373,17 +384,20 @@ a {
   .content2 img {
     width: 100%; }
   .content2-background {
-    background-image: url("/HamoGroup/DripFit/img/Bgcontent2.png");
+    background-image: url("/HamoGroup/DripFit/img/bgcontent2.png");
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover; }
   .content2 .slider .mySlides-content2 {
-    position: absolute;
     color: black;
-    z-index: 100; }
+    font-size: 13px;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    background-color: #FFFFFF; }
   .content2 .slider .carousel-inner img {
     margin: 0 auto; }
   .content2 .slider .carousel-inner button img {
+    transform: translateY(-100%);
     width: 15px;
     height: 23px; }
   .content2 .slider .carousel-content2 {
@@ -521,13 +535,20 @@ a {
 .content6 {
   background-color: #F2F2F2;
   padding-left: 30px;
-  padding-right: 30px;
-  margin: 0; }
+  padding-right: 30px; }
   .content6 .title {
     text-align: center; }
-  .content6 .slider .carousel-inner button {
-    width: 15px;
-    height: 23px; }
+    @media (max-width: 850px) {
+      .content6 .title h2 {
+        font-size: 19px; }
+      .content6 .title span {
+        font-size: 20px;
+        background-color: #A351A3;
+        color: white; } }
+  .content6 .slider .carousel-inner .slider-button {
+    margin-top: 30%;
+    width: 20px;
+    height: 31px; }
   .content6 .slider .carousel-inner .title h2 {
     font-size: 30px; }
   .content6 .slider .carousel-inner .title p {
@@ -600,13 +621,16 @@ a {
         font-size: 30px;
         margin-top: 10px; } }
   @media (max-width: 470px) {
-    .content8-title2 h2 {
-      font-size: 19px; }
-    .content8-title2 span {
-      font-size: 20px;
-      letter-spacing: 0.5em; }
-    .content8-title2 h4 {
-      font-size: 13.982px; } }
+    .content8-title2 {
+      margin-top: -30px; }
+      .content8-title2 h2 {
+        font-size: 19px; }
+      .content8-title2 span {
+        font-size: 20px;
+        letter-spacing: 0.5em; }
+      .content8-title2 h4 {
+        font-size: 13.982px;
+        margin-bottom: 10px; } }
   .content8 .title button {
     cursor: pointer;
     font-family: 'SFU Futura';
