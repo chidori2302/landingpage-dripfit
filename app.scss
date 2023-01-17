@@ -176,8 +176,6 @@ $lg: 1300px;
 
     .alert-submit{
         img{
-            // top: calc(50% - 0.5*323px);
-            // left: calc(50% - 0.5*566px);
             @media (max-width: 700px) {
                 width: 90%;
                 left: 5%;
@@ -210,27 +208,12 @@ a{
         color: black;
     }
 }
-// .mySlides {
-//     display: none;
-// }
-// @keyframes runRight {
-//     0% {opacity: 0%;}
-
-//     100% {opacity: 100%;}
-// }
-// .fade {
-//     display: block;
-//     animation: runRight 0.5s ;
-//   }
   
 
 .direction{
     z-index: 100;
     top: 70%;
-        right: 3%;
-        // .mb-10{
-        //     margin-bottom: 90%;
-        // }
+    right: 3%;
     img{
         width: 48px;
         height: 48px;
@@ -245,12 +228,9 @@ a{
         margin-bottom: 0px;
         font-size: 19px;
         color: #000000;
-        // margin-bottom: -8px;
         
         @media (min-width: 600px) {
             font-size: 40px;
-
-            
         }
     } 
     span{
@@ -356,9 +336,7 @@ a{
         background: linear-gradient(97.32deg, #AB7927 -62%, #B48739 -59.66%, #CBA964 -53.21%, #DEC688 -46.69%, #ECDCA3 -40.16%, #F7EBB7 -33.6%, #FDF5C3 -27%, #FFF8C7 -20.28%, #FEF6C2 -6.7%, #FDF1B4 9.2%, #FAE89D 26.2%, #F6DC7C 43.89%, #F5D76F 50%, #F0D16B 52.72%, #C9A04D 76.4%, #B1823A 94.44%, #A87733 104.61%, #A27230 124.92%, #936426 150.67%, #8D5F22 157.81%, #AE7B33 176.89%, #D69D48 202.1%, #C28D41 209.2%, #6F4C25 239.64%, #4E321A 253.5%, #4F331A 254.07%, #7C5320 282.44%, #8D5F22 296.79%, #D69D48 321.82%);
         margin-bottom: 5%;
         @media (max-width: 500px) {
-            font-size: 10.2px;
-
-            
+            font-size: 10.2px;    
         }
     }
     position: relative;
@@ -505,7 +483,6 @@ a{
     .up{
         transform: translateY(-15%);
         @media (max-width: 600px) {
-            // top: 35%;
             img{
 
                 width: 15px;
@@ -618,12 +595,6 @@ a{
     }
     .content1-img{
         max-width: 615px;
-        // @media (max-width: 1200px) {
-        //     width: 100%;
-        // }
-        // @media (min-width: 1200px) {
-        //     width: 615px;
-        // }
         img{
             width: 100%;
         }
@@ -638,7 +609,6 @@ a{
     }
     &-background{
         background-image: 
-        // linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)),
         url("/HamoGroup/DripFit/img/bgcontent2.png");
         background-position: center;
         background-repeat: no-repeat;
@@ -647,9 +617,7 @@ a{
     }
     .slider{
         .mySlides-content2{
-            // position:relative;
             color: black;
-            // top: 100px;
             font-size: 13px;
             padding-left: 1.5rem;
             padding-right: 1.5rem;
@@ -798,7 +766,6 @@ a{
     text-align: center;
     padding-top: 38px;
     padding-bottom: 23px;
-    // padding: 30px;
     .title{
         margin-bottom: 23px;
         @media (max-width: 992px) {
@@ -857,7 +824,6 @@ a{
         }
     }
     &-text{
-        // width: 516px;
         max-width: 516px;
         &-check{
             font-weight: 400;
@@ -1143,8 +1109,6 @@ a{
             font-weight: 400;
                 font-size: 15px;
                 margin-top: 4.1px;
-                // border: white;
-                // background-color: $mainbg-color;
                 width: 100%;
                 height: 15%;
                 padding: 10px 16px;
@@ -1174,28 +1138,6 @@ a{
             margin-top: -15px;
             color: #B5B5C3;
         }
-        // @media lg {
-        //     h2{
-        //         font-size: 16px;
-                
-        //     }
-        //     span{
-        //         font-size: 16px;
-                
-        //     }
-        //     ul{
-        //         font-size: 16px;
-
-        //     }
-        //     input{
-        //         font-size: 16px;
-
-        //     }
-        //     button{
-        //         font-size: 16px;
-
-        //     }
-        // }
         
         
         @media (max-width: 1428px) {
@@ -1232,12 +1174,9 @@ a{
         top: 50%;
         transform: translateY(-50%);
         @media (max-width: 992px) {
-            // position: static;
             margin: 0 auto;
             top: 40%;
             transform: translateY(0%);
-            // left: 50%;
-            // transform: translateX(-50%);
             h2{
                 font-size: 25.8676px
                 
@@ -1298,16 +1237,6 @@ a{
             }
         }
     }
-    // .form-pc{
-    //     position: absolute;
-        
-    // }
-    // .form-mobile{
-    //     position: absolute;
-    //     left: 50%;
-    //     transform: translateX(-50%);
-    //     bottom: 19px;
-    // }
 }
 footer{
     display: flex;
