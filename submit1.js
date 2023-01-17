@@ -47,9 +47,19 @@ $(document).ready(()=>
                                                     
                                                     if(data == 'false') 
                                                     {
-                                                        alert('Thêm không thành công, bạn cũng có thể sử dụng để hiển thị Popup hoặc điều hướng');
+                                                        // document.querySelector(`body`).innerHTML+=`
+                                                        // <div class="alert alert-danger" role="alert">
+                                                        //     Gửi thông tin thất bại!
+                                                        // </div>
+                                                        // `
+                                                        console.log(`Submit False`);
                                                     }else{
-                                                        alert('Đã thêm dữ liệu vào Form');
+                                                        document.querySelector(`.root`).innerHTML+=`
+                                                        <div class="alert-submit position-fixed w-100 h-100" onclick="$(this).remove()" onscroll="$(this).remove()">
+                                                            <img class="animated fadeInDown position-absolute" 
+                                                            src="./img/alert.png" alt="">
+                                                        </div>
+                                                        `
                                                         for (let i = 0; i < value.length; i++) {
                                                             value[i].value=``;
                                                             

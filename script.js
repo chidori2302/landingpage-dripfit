@@ -14,4 +14,3 @@ $(".menu-overlay").click(function(event) {
   $(".navbar-toggle").trigger("click");
   $(".menu-overlay").fadeOut(500);
 });
-
